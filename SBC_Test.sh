@@ -145,7 +145,7 @@ fi
 # ---------- Network sanity ----------
 echo "[$(date '+%F %T')] ➤ Pinging 8.8.8.8 every 1s for 10m"
 set +e
-ping -i 1 -w 600 8.8.8.8 2>&1 | tee "$LOG_DIR/ping.log"
+ping -i 1 -w 180 8.8.8.8 2>&1 | tee "$LOG_DIR/ping.log"
 PING_EXIT=${PIPESTATUS[0]}
 set -e
 echo "Ping exit status: $PING_EXIT" | tee -a "$LOG_DIR/ping.log"
